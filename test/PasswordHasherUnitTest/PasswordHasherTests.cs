@@ -2,9 +2,7 @@
 using StandardCore.Security.PasswordHasher.BinaryConverter;
 using StandardCore.Security.PasswordHasher.Hasher;
 using StandardCore.Security.PasswordHasher.RandomGenerator;
-using System;
 using System.Collections.Generic;
-using System.Text;
 using Xunit;
 
 namespace PasswordHasherUnitTest
