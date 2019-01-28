@@ -3,9 +3,9 @@ using System.Runtime.CompilerServices;
 
 namespace StandardCore.Security.PasswordHasher
 {
-    internal static class BufferUtil
+    public static class BufferUtil
     {
-        internal static void WriteNetworkByteOrder(byte[] buffer, int offset, uint value)
+        public static void WriteNetworkByteOrder(byte[] buffer, int offset, uint value)
         {
             buffer[offset + 0] = (byte)(value >> 24);
             buffer[offset + 1] = (byte)(value >> 16);
@@ -13,7 +13,7 @@ namespace StandardCore.Security.PasswordHasher
             buffer[offset + 3] = (byte)(value >> 0);
         }
 
-        internal static uint ReadNetworkByteOrder(byte[] buffer, int offset)
+        public static uint ReadNetworkByteOrder(byte[] buffer, int offset)
         {
             return ((uint)buffer[offset + 0] << 24)
                    | ((uint)buffer[offset + 1] << 16)
@@ -22,7 +22,7 @@ namespace StandardCore.Security.PasswordHasher
         }
 
         [MethodImpl(MethodImplOptions.NoInlining | MethodImplOptions.NoOptimization)]
-        internal static bool ByteArraysEqual(byte[] a, byte[] b)
+        public static bool ByteArraysEqual(byte[] a, byte[] b)
         {
             if (a == null && b == null)
                 return true;
@@ -34,7 +34,7 @@ namespace StandardCore.Security.PasswordHasher
             return areSame;
         }
 
-        internal static void BlockFill(Array src, Array dest, int offset)
+        public static void BlockFill(Array src, Array dest, int offset)
         {
             Buffer.BlockCopy(src, 0, dest, offset, src.Length);
         }

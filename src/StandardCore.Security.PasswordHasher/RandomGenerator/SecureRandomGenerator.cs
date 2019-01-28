@@ -4,7 +4,7 @@ namespace StandardCore.Security.PasswordHasher.RandomGenerator
 {
     public class SecureRandomGenerator : ISecureRandomGenerator
     {
-        private static readonly RandomNumberGenerator _rng = RandomNumberGenerator.Create();
+        private readonly RandomNumberGenerator _rng = RandomNumberGenerator.Create();
         
         public byte[] GenerateBytes(uint length)
         {
