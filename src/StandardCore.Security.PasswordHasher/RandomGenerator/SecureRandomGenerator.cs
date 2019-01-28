@@ -1,6 +1,6 @@
 ﻿using System.Security.Cryptography;
 
-namespace StandardCore.Security.PasswordHasher
+namespace StandardCore.Security.PasswordHasher.RandomGenerator
 {
     public class SecureRandomGenerator : ISecureRandomGenerator
     {
