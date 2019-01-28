@@ -1,4 +1,5 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using StandardCore.Routine;
 using StandardCore.Security.PasswordHasher;
 using StandardCore.Security.PasswordHasher.RandomGenerator;
 using System;
@@ -31,33 +32,6 @@ namespace PasswordHasherTest
                 .GroupBy(x => x)
                 .Any(x => x.Count() > 1);
             Assert.IsFalse(flag);
-        }
-
-        private class WaitGroup
-        {
-            private int _counter = 0;
-
-            public void Add(uint delta)
-            {
-                if (delta == 1) Interlocked.Increment(ref _counter);
-                else
-                {
-                    for (var i = 0; i < delta; i++)
-                    {
-                        Interlocked.Increment(ref _counter);
-                    }
-                }
-            }
-
-            public void Done()
-            {
-                Interlocked.Decrement(ref _counter);
-            }
-
-            public void Await()
-            {
-                while (_counter > 0) continue;
-            }
         }
 
         private class EqualableBinary : IEquatable<byte[]>
