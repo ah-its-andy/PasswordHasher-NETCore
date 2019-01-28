@@ -19,7 +19,7 @@ namespace StandardCore.Security.PasswordHasher
 
         public string HashPassword(string password)
         {
-            throw new NotImplementedException();
+            return HashPassword(password, FormatMarkers.Pbkdf2);
         }
 
         public string HashPassword(string password, byte formatMarker)
